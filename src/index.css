@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-color: #020617; /* Darker, richer navy (Slate 950) */
+  --color-second-bg-color: #0f172a; /* Slate 900 */
+  --color-text-color: #f8fafc; /* Slate 50 */
+  --color-main-color: #f97316; /* Orange 500 - Base accent */
+  --color-accent-gradient: linear-gradient(135deg, #f97316 0%, #ec4899 100%); /* Orange to Pink Gradient */
+  --font-poppins: Poppins, sans-serif;
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes pulse-soft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  @keyframes glitch {
+    0% {
+      transform: translate(0);
+    }
+    20% {
+      transform: translate(-2px, 2px);
+    }
+    40% {
+      transform: translate(-2px, -2px);
+    }
+    60% {
+      transform: translate(2px, 2px);
+    }
+    80% {
+      transform: translate(2px, -2px);
+    }
+    100% {
+      transform: translate(0);
+    }
+  }
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: var(--font-poppins);
+  }
+
+  html {
+    font-size: 62.5%; /* 1rem = 10px */
+    overflow-x: hidden;
+  }
+
+  @media (max-width: 768px) {
+    html {
+        font-size: 55%;
+    }
+  }
+
+  body {
+    @apply bg-bg-color text-text-color antialiased;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(249, 115, 22, 0.05) 0%, transparent 20%),
+      radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.05) 0%, transparent 20%);
+  }
+  
+  section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem; /* Adjusted standard padding */
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 1.0rem;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-second-bg-color;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-main-color rounded-full;
+  }
+
+  /* Selection Color */
+  ::selection {
+    @apply bg-main-color text-white;
+  }
+}
+
+/* Custom utilities */
+.btn {
+  @apply inline-block px-10 py-4 bg-main-color rounded-full text-2xl font-semibold tracking-wide transition-all duration-300 ease-in-out text-white cursor-pointer relative overflow-hidden z-10;
+  box-shadow: 0 0 1rem rgba(249, 115, 22, 0.4);
+}
+
+.btn::before {
+  content: '';
+  @apply absolute top-0 left-0 w-0 h-full bg-white/20 transition-all duration-300 -z-10;
+}
+
+.btn:hover::before {
+  @apply w-full;
+}
+
+.btn:hover {
+  box-shadow: 0 0 2rem rgba(249, 115, 22, 0.6);
+  transform: translateY(-3px);
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-lg;
+}
+
+.glass-strong {
+  @apply bg-bg-color/80 backdrop-blur-xl border-b border-white/5;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-main-color to-pink-500;
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+}
+
+.mask-image-b-fade {
+    mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.glitch-text:hover {
+  animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+  color: var(--color-main-color);
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scroll-bar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scroll-bar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
