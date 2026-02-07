@@ -33,7 +33,7 @@ const Hero = () => {
                         <a href="#contact" className="btn hover:scale-105">
                             Get a project
                         </a>
-                        <a href="img/CV-Sarvesh_Singh.docx" className="px-10 py-4 bg-transparent text-white border-2 border-white/20 rounded-full font-semibold text-xl hover:border-main-color hover:text-main-color transition-all duration-300 hover:shadow-[0_0_1rem_rgba(249,115,22,0.3)]">
+                        <a href="img/CV Sarvesh Singh.pdf" target="_blank" rel="noopener noreferrer" className="px-10 py-4 bg-transparent text-white border-2 border-white/20 rounded-full font-semibold text-xl hover:border-main-color hover:text-main-color transition-all duration-300 hover:shadow-[0_0_1rem_rgba(249,115,22,0.3)]">
                             My resume
                         </a>
                     </div>
@@ -86,6 +86,7 @@ const Hero = () => {
                     { name: 'JavaScript', icon: 'bx bxl-javascript', color: 'text-yellow-400' },
                     { name: 'React', icon: 'bx bxl-react', color: 'text-cyan-400' },
                     { name: 'Node.js', icon: 'bx bxl-nodejs', color: 'text-green-500' },
+                    { name: 'Python', icon: 'bx bxl-python', color: 'text-yellow-500' },
                     { name: 'Tailwind', icon: 'bx bxl-tailwind-css', color: 'text-cyan-300' },
                     { name: 'Git', icon: 'bx bxl-git', color: 'text-red-500' },
                     { name: 'GitHub', icon: 'bx bxl-github', color: 'text-white' }
