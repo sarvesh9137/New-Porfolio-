@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Contact = () => {
     return (
-        <section className="contact py-20 pb-40 md:pb-20 px-[5%] md:px-[9%] flex justify-center items-center flex-col relative overflow-hidden" id="contact">
+        <section className="contact min-h-screen py-20 pb-40 md:py-32 px-[5%] md:px-[9%] flex justify-center items-center flex-col relative overflow-hidden" id="contact">
             {/* Background decorations */}
             <div className="absolute top-20 left-10 w-64 h-64 bg-main-color/10 rounded-full blur-[100px] pointer-events-none"></div>
             <div className="absolute bottom-20 right-10 w-80 h-80 bg-pink-500/10 rounded-full blur-[100px] pointer-events-none"></div>
@@ -65,7 +65,7 @@ const Contact = () => {
                 </motion.button>
             </motion.form>
 
-            <footer className="w-full text-center py-6 mt-8 border-t border-white/10 relative z-50">
+            <footer className="w-full text-center py-6 mt-16 border-t border-white/10 relative z-50">
                 <p className="text-[1.4rem] text-white/60">Copyright &copy; 2026 by Sarvesh Singh | All Rights Reserved.</p>
             </footer>
         </section>
